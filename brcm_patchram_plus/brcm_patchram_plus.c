@@ -800,6 +800,9 @@ proc_enable_hci()
 // if the path to it exists.
 void save_bdaddr( char* bdaddr )
 {
+  struct stat st;
+  int fd;
+  
 	// first, make sure the directory is there. If not, don't bother.
 	if ( stat("/data/misc/bluetoothd", &st) == 0 )
 	{
@@ -816,8 +819,7 @@ void
 read_default_bdaddr()
 {
 	int sz;
-	int fd;
-	struct stat st;
+	int fd;	
 	char path[PROPERTY_VALUE_MAX];
 	char addr_from_ril[PROPERTY_VALUE_MAX];
 	char imei_bt[23];
