@@ -823,7 +823,7 @@ read_default_bdaddr()
 	char path[PROPERTY_VALUE_MAX];
 	char addr_from_ril[PROPERTY_VALUE_MAX];
 	char imei_bt[23];
-	char bdaddr[18];.
+	char bdaddr[18];
 	char *pattern = NULL;
 
 /*
@@ -900,7 +900,7 @@ read_default_bdaddr()
 				// this indicates that it's colon-separated in format
 				pattern = "%02X:%02X:%02X:%02X:%02X:%02X";
 
-		} else if ( sz == >= 12 ) {
+		} else if ( sz == 12 ) {
 				// 12 is the absolute minimum we can parse an address from.
 				// that represents just the address, no \0 terminator on
 				// the string.  So, we just parse the first 12 bytes as
